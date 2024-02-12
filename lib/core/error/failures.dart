@@ -12,3 +12,10 @@ class ServerFailure extends Failure {
   @override
   List<Object?> get props => [message];
 }
+
+class CacheFailure extends Failure {
+  CacheFailure({required String message}) : super(message: message);
+
+  @override
+  List<Object?> get props => [message];
+}

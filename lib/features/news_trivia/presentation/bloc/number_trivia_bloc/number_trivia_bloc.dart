@@ -1,8 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import '../../domain/entities/number_trivia_entity.dart';
-import '../../domain/usecases/get_concrete_number_trivia_use_case.dart';
-import '../../domain/usecases/get_random_number_trivia_use_case.dart';
+import '../../../data/models/person_model.dart';
+import '../../../domain/entities/number_trivia_entity.dart';
+import '../../../domain/usecases/get_concrete_number_trivia_use_case.dart';
+import '../../../domain/usecases/get_random_number_trivia_use_case.dart';
 
 part 'number_trivia_event.dart';
 

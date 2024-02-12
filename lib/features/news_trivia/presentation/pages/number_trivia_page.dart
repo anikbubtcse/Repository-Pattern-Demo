@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:repository_pattern_demo/features/news_trivia/presentation/bloc/number_trivia_bloc.dart';
+import 'package:repository_pattern_demo/features/news_trivia/presentation/bloc/number_trivia_bloc/number_trivia_bloc.dart';
+import 'package:repository_pattern_demo/features/news_trivia/presentation/pages/local_database_page.dart';
 
 class NumberTriviaPage extends StatefulWidget {
   const NumberTriviaPage({super.key});
+
+  static const String numberTriviaPage = 'numberTriviaPage';
 
   @override
   State<NumberTriviaPage> createState() => _NumberTriviaPageState();
@@ -24,7 +27,7 @@ class _NumberTriviaPageState extends State<NumberTriviaPage> {
         backgroundColor: Colors.green.shade500,
       ),
       body: Container(
-        margin: EdgeInsets.all(15),
+        margin: const EdgeInsets.all(15),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -172,7 +175,26 @@ class _NumberTriviaPageState extends State<NumberTriviaPage> {
                     ),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green.shade500,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5))),
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushNamed(LocalDatabasePage.localDatabasePage);
+                  },
+                  child: const Text(
+                    'Test Local Database',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500),
+                  )),
             ],
           ),
         ),
